@@ -21,7 +21,7 @@ function validateLogin(email, password) {
 
 // Função para emitir alertas conforme resposta da validação.
 function alertLogin() {
-  if (validateLogin(getEmail(), getPassword()) === true) {
+  if (validateLogin(getEmail(), getPassword())) {
     alert('Olá, Tryber!');
   } else {
     alert('Email ou senha inválidos.');
@@ -29,7 +29,7 @@ function alertLogin() {
 }
 
 // Função que adiciona o Event Listener ao botão de entrar.
-function btnLogin() {
+function putEventLogin() {
   const buttonLogin = document.querySelector('#login');
   buttonLogin.addEventListener('click', alertLogin);
 }
@@ -45,9 +45,9 @@ function validateCheck() {
 }
 
 // Função que habilita ou desabilita o botão de enviar conforme marcação do checkbox.
-function submit() {
+function checkSubmit() {
   const button = document.querySelector('#submit-btn');
-  if (validateCheck() === true) {
+  if (validateCheck()) {
     button.disabled = false;
   } else {
     button.disabled = true;
@@ -55,9 +55,9 @@ function submit() {
 }
 
 // Função que adiciona o Event Listener ao botão de enviar.
-function checkSubmit() {
+function putEventSubmit() {
   const checkAgreement = document.querySelector('#agreement');
-  checkAgreement.addEventListener('click', submit);
+  checkAgreement.addEventListener('click', checkSubmit);
 }
 
 // ----
@@ -68,18 +68,18 @@ function getTextChars() {
 }
 
 // Função que insere no elemento #counter a quantidade de caracteres restantes (max. 500).
-function countChar() {
+function countDownChar() {
   const textChars = getTextChars();
   document.querySelector('#counter').innerText = (500 - textChars);
 }
 
 // Função que adiciona o Event Listener à text area conforme a pessoa digite.
-function charsCount() {
+function countCharsTextArea() {
   const textArea = document.querySelector('#textarea');
-  textArea.addEventListener('keyup', countChar);
+  textArea.addEventListener('keyup', countDownChar);
 }
 
 // Chamar as funções
-btnLogin();
-checkSubmit();
-charsCount();
+putEventLogin();
+putEventSubmit();
+countCharsTextArea();
