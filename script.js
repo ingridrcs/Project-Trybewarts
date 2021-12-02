@@ -55,17 +55,17 @@ function checkSubmit() {
 // ----
 
 function getTextChars() {
-  const textArea = document.querySelector('#text-comment').value;
+  const textArea = document.querySelector('#textarea').value;
   return textArea.length;
 }
 
 function countChar() {
   const textChars = getTextChars();
-  document.querySelector('#counter').innerText = textChars;
+  document.querySelector('#counter').innerText = (500 - textChars);
 }
 
 function charsCount() {
-  const textArea = document.querySelector('#text-comment');
+  const textArea = document.querySelector('#textarea');
   textArea.addEventListener('keyup', countChar);
 }
 
