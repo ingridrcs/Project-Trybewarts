@@ -28,5 +28,30 @@ function btnLogin() {
   buttonLogin.addEventListener('click', alertLogin);
 }
 
+// ----
+
+function validateCheck() {
+  const agreement = document.querySelector('#agreement');
+  if (agreement.checked) {
+    return true;
+  }
+  return false;
+}
+
+function submit() {
+  const button = document.querySelector('#submit-btn');
+  if (validateCheck() === true) {
+    button.disabled = false;
+  } else {
+    button.disabled = true;
+  }
+}
+
+function checkSubmit() {
+  const checkAgreement = document.querySelector('#agreement');
+  checkAgreement.addEventListener('click', submit);
+}
+
 // Chamar as funções
 btnLogin();
+checkSubmit();
