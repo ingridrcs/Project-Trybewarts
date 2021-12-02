@@ -9,3 +9,13 @@
   justify-content: space-between;
   align-items: center;
 }
+
+.trybewarts-header-logo {
+  height: 60px;
+  margin: 5px 15px;
+}
+
+.trybewarts-login {
+  display: flex;
+  align-items: center;
+}
