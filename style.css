@@ -38,3 +38,10 @@ main {
   display: flex;
   flex-direction: column;
 }
+
+footer {
+  background-color: darkslategrey;
+  color: white;
+  margin: 5px 0;
+  text-align: center;
+}
