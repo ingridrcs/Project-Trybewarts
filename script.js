@@ -52,6 +52,24 @@ function checkSubmit() {
   checkAgreement.addEventListener('click', submit);
 }
 
+// ----
+
+function getTextChars() {
+  const textArea = document.querySelector('#text-comment').value;
+  return textArea.length;
+}
+
+function countChar() {
+  const textChars = getTextChars();
+  document.querySelector('#counter').innerText = textChars;
+}
+
+function charsCount() {
+  const textArea = document.querySelector('#text-comment');
+  textArea.addEventListener('keyup', countChar);
+}
+
 // Chamar as funções
 btnLogin();
 checkSubmit();
+charsCount();
