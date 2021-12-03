@@ -30,6 +30,7 @@ h1 {
 
 main {
   display: flex;
+  align-items: center;
 }
 
 #evaluation-form {
@@ -48,12 +49,16 @@ main {
   display: flex;
   flex-direction: row;
   align-content: center;
+  padding: 50px;
 }
 
+/* Source: https://tableless.com.br/colocar-rodape-fixo-no-bottom/ */
 footer {
   background-color: darkslategrey;
   color: white;
-  margin: 5px 0;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
   text-align: center;
 }
 
@@ -84,18 +89,14 @@ footer {
   margin: 5px;
 }
 
-#vertical {
+#family {
   display: flex;
   flex-direction: column;
   width: 50%;
 }
 
-#vertical2 {
+#prog {
   display: flex;
   flex-wrap: wrap;
   width: 48%;
-}
-
-#label-content {
-  padding: 5px;
 }
