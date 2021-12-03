@@ -3,6 +3,14 @@
   margin: 0;
 }
 
+body {
+  background-color: rgb(234, 237, 240);
+}
+
+h1 {
+  color: white;
+}
+
 .header {
   display: flex;
   background-color: rgb(50, 167, 145);
@@ -29,7 +37,7 @@ main {
   width: 675px;
   flex-direction: column;
   align-items: center;
-  margin: 50px 80px;
+  margin: 80px 100px;
 }
 
 #trybewarts-forms-logo {
@@ -38,7 +46,8 @@ main {
 
 .flex-col {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  align-content: center;
 }
 
 footer {
@@ -46,4 +55,47 @@ footer {
   color: white;
   margin: 5px 0;
   text-align: center;
+}
+
+#inputs {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 10px;
+  width: 500px;
+  justify-content: space-between;
+}
+
+#input-name {
+  border: 1px solid white;
+  margin: 5px;
+}
+
+#input-lastname {
+  border: 1px solid white;
+  margin: 5px;
+}
+
+#input-email {
+  border: 1px solid white;
+  margin: 5px;
+}
+
+#house {
+  margin: 5px;
+}
+
+#vertical {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+}
+
+#vertical2 {
+  display: flex;
+  flex-wrap: wrap;
+  width: 48%;
+}
+
+#label-content {
+  padding: 5px;
 }
