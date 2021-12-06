@@ -31,6 +31,7 @@ h2 {
 .trybewarts-login {
   display: flex;
   align-items: center;
+  margin-right: 15px;
 }
 
 main {
@@ -69,7 +70,7 @@ footer {
   text-align: center;
 }
 
-#inputs {
+.div-inputs {
   display: flex;
   flex-wrap: wrap;
   margin: 10px;
@@ -77,17 +78,7 @@ footer {
   justify-content: space-between;
 }
 
-#input-name {
-  border: 1px solid white;
-  margin: 5px;
-}
-
-#input-lastname {
-  border: 1px solid white;
-  margin: 5px;
-}
-
-#input-email {
+.input {
   border: 1px solid white;
   margin: 5px;
 }
