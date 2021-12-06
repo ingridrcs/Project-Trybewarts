@@ -78,6 +78,50 @@ function countCharsTextArea() {
   const textArea = document.querySelector('#textarea');
   textArea.addEventListener('keyup', countDownChar);
 }
+/* REQUISITO 21 */
+function infos() {
+  const firstName = document.querySelector('#input-name').value;
+  /* const lastName = document.querySelector('#input-lastname').value;
+const email = document.querySelector('#input-email').value;
+const house = document.querySelector('#house').value;
+const obs = document.querySelector('#textarea').value; */
+  return [{ name: 'Nome', value: `${firstName.value}` }];
+}
+
+/* function checkFamily() {
+  const family = document.querySelectorAll('#family input');
+  let selected;
+  family.forEach((e) => {
+    if (e.checked) {
+      selected = e.value;
+    }
+  });
+  return selected;
+} */
+
+function finalList(e) {
+  e.preventDefault();
+  const newForm = infos();
+  const answers = document.querySelector('finalForm');
+  newForm.forEach((nome) => {
+    const words = document.createElement('p');
+    words.innerText = `${nome.name}: ${nome.value}`;
+    answers.appendChild(words);
+  });
+}
+const but = document.querySelector('#submit-btn');
+but.addEventListener('click', finalList);
+
+/* function subject() {
+  const newSubject = document.querySelectorAll('#prog');
+  let selected2;
+  for (let i of newSubject) {
+    if(newSubject[i].checked) {
+      selected2 = newSubject[i].value;
+    }
+  }
+  return selected2;
+} */
 
 // Chamar as funções
 putEventLogin();
