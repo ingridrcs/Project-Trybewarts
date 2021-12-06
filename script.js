@@ -54,8 +54,8 @@ function checkSubmit() {
   }
 }
 
-// Função que adiciona o Event Listener ao botão de enviar.
-function putEventSubmit() {
+// Função que adiciona o Event Listener ao checkbox.
+function putEventCheck() {
   const checkAgreement = document.querySelector('#agreement');
   checkAgreement.addEventListener('click', checkSubmit);
 }
@@ -78,52 +78,159 @@ function countCharsTextArea() {
   const textArea = document.querySelector('#textarea');
   textArea.addEventListener('keyup', countDownChar);
 }
+
 /* REQUISITO 21 */
-function infos() {
-  const firstName = document.querySelector('#input-name').value;
-  /* const lastName = document.querySelector('#input-lastname').value;
-const email = document.querySelector('#input-email').value;
-const house = document.querySelector('#house').value;
-const obs = document.querySelector('#textarea').value; */
-  return [{ name: 'Nome', value: `${firstName.value}` }];
+// GET
+function getNewName() {
+  const name = document.querySelector('#input-name').value;
+  return name;
 }
 
-/* function checkFamily() {
-  const family = document.querySelectorAll('#family input');
-  let selected;
-  family.forEach((e) => {
-    if (e.checked) {
-      selected = e.value;
-    }
-  });
-  return selected;
-} */
-
-function finalList(e) {
-  e.preventDefault();
-  const newForm = infos();
-  const answers = document.querySelector('finalForm');
-  newForm.forEach((nome) => {
-    const words = document.createElement('p');
-    words.innerText = `${nome.name}: ${nome.value}`;
-    answers.appendChild(words);
-  });
+function getNewSurname() {
+  const surname = document.querySelector('#input-lastname').value;
+  return surname;
 }
-const but = document.querySelector('#submit-btn');
-but.addEventListener('click', finalList);
 
-/* function subject() {
-  const newSubject = document.querySelectorAll('#prog');
-  let selected2;
-  for (let i of newSubject) {
-    if(newSubject[i].checked) {
-      selected2 = newSubject[i].value;
-    }
+function getNewEmail() {
+  const email = document.querySelector('#input-email').value;
+  return email;
+}
+
+function getNewHouse() {
+  const house = document.querySelector('#house').value;
+  return house;
+}
+
+// ref.: https://www.javatpoint.com/how-to-check-a-radio-button-using-javascript
+function getNewFamily() {
+  const family = document.querySelector('input[name="family"]:checked').value;
+  return family;
+}
+
+function getNewContent() {
+  const contentArray = document.querySelectorAll('.subject:checked');
+  const content = [];
+  for (let index = 0; index < contentArray.length; index += 1) {
+    content[index] = contentArray[index].value;
   }
-  return selected2;
-} */
+  return content.join(', ');
+}
+
+function getNewEvaluation() {
+  const evaluation = document.querySelector('input[name="rate"]:checked').value;
+  return evaluation;
+}
+
+function getNewComment() {
+  const comment = document.querySelector('#textarea').value;
+  return comment;
+}
+
+// Constructor
+function constructorNewUser() {
+  const user = {
+    name: getNewName(),
+    surname: getNewSurname(),
+    email: getNewEmail(),
+    house: getNewHouse(),
+    family: getNewFamily(),
+    content: getNewContent(),
+    evaluation: getNewEvaluation(),
+    comment: getNewComment(),
+  };
+  return user;
+}
+
+// Set
+// ref.: https://www.javascripttutorial.net/dom/manipulating/replace-a-dom-element/
+function setNewName(name, surname) {
+  const inputName = document.querySelector('#input-name');
+  const inputSurname = document.querySelector('#input-lastname');
+  inputSurname.remove();
+  const paragraph = document.createElement('p');
+  paragraph.innerText = `Nome: ${name} ${surname}`;
+  inputName.parentNode.replaceChild(paragraph, inputName);
+}
+
+function setNewEmail(email) {
+  const inputEmail = document.querySelector('#input-email');
+  const paragraph = document.createElement('p');
+  paragraph.innerText = `Email: ${email}`;
+  inputEmail.parentNode.replaceChild(paragraph, inputEmail);
+}
+
+function setNewHouse(house) {
+  const selectHouse = document.querySelector('#house');
+  const paragraph = document.createElement('p');
+  paragraph.innerText = `Casa: ${house}`;
+  selectHouse.previousElementSibling.remove();
+  selectHouse.parentNode.replaceChild(paragraph, selectHouse);
+}
+
+function setNewFamily(family) {
+  const divFamily = document.querySelector('#family');
+  const paragraph = document.createElement('p');
+  paragraph.innerText = `Família: ${family}`;
+  divFamily.replaceChild(paragraph, divFamily.firstChild);
+  for (let index = 1; divFamily.children.length > 1;) {
+    divFamily.children[index].remove();
+  }
+}
+
+function setNewContent(content) {
+  const divContent = document.querySelector('#content');
+  const paragraph = document.createElement('p');
+  paragraph.innerText = `Matérias: ${content}`;
+  divContent.replaceChild(paragraph, divContent.firstChild);
+  for (let index = 1; divContent.children.length > 1;) {
+    divContent.children[index].remove();
+  }
+}
+
+function setNewEvaluation(evaluation) {
+  const divEvaluation = document.querySelector('#evaluation');
+  const paragraph = document.createElement('p');
+  paragraph.innerText = `Avaliação: ${evaluation}`;
+  divEvaluation.replaceChild(paragraph, divEvaluation.firstChild);
+  for (let index = 1; divEvaluation.children.length > 1;) {
+    divEvaluation.children[index].remove();
+  }
+}
+
+function setNewComment(comment) {
+  const divComments = document.querySelector('#comments');
+  const paragraph = document.createElement('p');
+  paragraph.innerText = `Observações: ${comment}`;
+  divComments.replaceChild(paragraph, divComments.firstChild);
+  for (let index = 1; divComments.children.length > 1;) {
+    divComments.children[index].remove();
+  }
+}
+
+function setNewUser(user) {
+  setNewName(user.name, user.surname);
+  setNewEmail(user.email);
+  setNewHouse(user.house);
+  setNewFamily(user.family);
+  setNewContent(user.content);
+  setNewEvaluation(user.evaluation);
+  setNewComment(user.comment);
+}
+
+function printNewUser(event) {
+  event.preventDefault();
+  const user = constructorNewUser();
+  setNewUser(user);
+  event.preventDefault();
+}
+
+function putEventSubmitBtn() {
+  const submitBtn = document.querySelector('#submit-btn');
+  submitBtn.addEventListener('click', printNewUser);
+}
 
 // Chamar as funções
 putEventLogin();
-putEventSubmit();
+putEventCheck();
+putEventSubmitBtn();
 countCharsTextArea();
