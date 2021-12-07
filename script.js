@@ -148,6 +148,8 @@ function setNewName(name, surname) {
   const inputSurname = document.querySelector('#input-lastname');
   inputSurname.remove();
   const paragraph = document.createElement('p');
+  inputName.nextElementSibling.remove();
+  inputName.parentNode.nextElementSibling.remove();
   paragraph.innerText = `Nome: ${name} ${surname}`;
   inputName.parentNode.replaceChild(paragraph, inputName);
 }
@@ -155,6 +157,7 @@ function setNewName(name, surname) {
 function setNewEmail(email) {
   const inputEmail = document.querySelector('#input-email');
   const paragraph = document.createElement('p');
+  inputEmail.nextElementSibling.remove();
   paragraph.innerText = `Email: ${email}`;
   inputEmail.parentNode.replaceChild(paragraph, inputEmail);
 }
@@ -162,8 +165,8 @@ function setNewEmail(email) {
 function setNewHouse(house) {
   const selectHouse = document.querySelector('#house');
   const paragraph = document.createElement('p');
+  selectHouse.nextElementSibling.remove();
   paragraph.innerText = `Casa: ${house}`;
-  selectHouse.previousElementSibling.remove();
   selectHouse.parentNode.replaceChild(paragraph, selectHouse);
 }
 
