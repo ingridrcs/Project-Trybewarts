@@ -48,7 +48,7 @@ main {
   width: 675px;
   flex-direction: column;
   align-items: center;
-  margin: 0 80px 1rem 80px;
+  margin: 0 80px 1rem;
 }
 
 #trybewarts-forms-logo {
@@ -100,6 +100,7 @@ main {
   height: 90px;
   width: 675px;
 }
+
 #login {
   margin: 5px;
 }
