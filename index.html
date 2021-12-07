@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-br" class="h-100">
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -11,7 +11,7 @@
   crossorigin="anonymous">
   <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body class="d-flex flex-column h-100 justify-content-between">
   <header class="header">
     <img class="trybewarts-header-logo" src="images/trybewarts-header-logo.svg" alt="Logotipo da trybewarts">
     <h1 id='trybewarts-header-title'>Trybewarts</h1>
@@ -22,6 +22,7 @@
     </form>
   </header>
   <main>
+    <div class="container d-flex  align-items-center justify-content-center">
   <form class="form-floating" id="evaluation-form">
     <h2>Formulário de Avaliação</h2>
     <div class="d-flex align-items-center justify-content-between width-inherit">
@@ -29,7 +30,7 @@
         <input type="text" class="form-control" placeholder="Nome" aria-label="Nome" id='input-name'>
         <label for="input-name">Nome</label>
       </div>
-      <div class="p-2 flex-grow-1 form-floating">
+      <div class="p-2 flex-grow-1 form-floating" id="div-lastname">
         <input type="text" class="form-control" placeholder="Sobrenome" id='input-lastname' aria-label="Last name">
         <label for="input-lastname">Sobrenome</label>
       </div>
@@ -50,22 +51,6 @@
         <label class="form-label" for="house">Casa:</label>
       </div>
     </div>
-    <!-- <div class='div-inputs container'>
-      <input class="inputs flex-item" id='input-name'type="text" placeholder="Nome">
-      <input class="inputs flex-item" id='input-lastname'type="text" placeholder="Sobrenome">
-    </div> -->
-    <!-- <div class='div-inputs container'>
-      <input class="inputs flex-item" id='input-email'type="text" placeholder="Email">
-      <div class="flex-item">
-        <label class="form-label" for="house">Casa:</label>
-        <select class="form-select" aria-label="Default select example" name="house" id="house">
-          <option selected value>Selecione uma opção</option>
-          <option value='Gitnória' id='gitnoria-house'>Gitnória</option>
-          <option value='Reactpuff' id='reactpuff-house'>Reactpuff</option>
-          <option value='Corvinode' id='corvinode-house'>Corvinode</option>
-          <option value='Pytherina' id='pytherina-house'>Pytherina</option>
-        </select>
-      </div> -->
 
     <div class="d-flex align-items-center justify-content-between width-inherit p-2 border-bottom">
       <div class='d-flex flex-column' id='family'>
@@ -127,25 +112,25 @@
     </div>
     
 
-    <div id='comments'>
+    <div class="form-check form-check-inline border-bottom p-md-2 width-inherit" id='comments'>
       <label for="textarea" class="textarea">Deixe seu comentário:</label>
       <textarea class="form-control" id='textarea' maxlength="500"></textarea>
       <p>Caracteres: <span id="counter">500</span></p>
     </div>
-    <div id='agree'>
+    <div class="form-check form-check-inline border-bottom p-md-2 width-inherit" id='agree'>
       <label for="agreement" id="label-infos">Você concorda com o uso das informações acima?</label>
       <input type="checkbox" id="agreement">
     </div>
     <div id='button'>
-      <button class="btn btn-primary btn-lg btn-block" type="submit" id="submit-btn" disabled>Enviar</button>
+      <button class="btn btn-primary btn-lg" type="submit" id="submit-btn" disabled>Enviar</button>
     </div>
   </form>
   
   <img id ='trybewarts-forms-logo'src="images/trybewarts-colored.svg">
-  
+</div>
   </main>
-  <footer>
-      Direitos reservados à Trybewarts©
+  <footer class="footer mt-auto">
+    Direitos reservados à Trybewarts©
   </footer>
 </body>
 <script src="script.js"></script>

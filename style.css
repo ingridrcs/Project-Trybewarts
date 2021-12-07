@@ -16,6 +16,14 @@ h2 {
   margin: 1rem auto;
 }
 
+p {
+  margin-bottom: 0;
+}
+
+main {
+  display: flex;
+}
+
 .header {
   display: flex;
   background-color: rgb(50, 167, 145);
@@ -34,17 +42,13 @@ h2 {
   margin-right: 30px;
 }
 
-main {
-  display: flex;
-  align-items: center;
-}
 
 #evaluation-form {
   display: flex;
   width: 675px;
   flex-direction: column;
   align-items: center;
-  margin: 0 80px;
+  margin: 0 80px 1rem 80px;
 }
 
 #trybewarts-forms-logo {
@@ -52,21 +56,11 @@ main {
   padding: 50px;
 }
 
-.flex-col {
-  display: flex;
-  flex-direction: row;
-  padding: 20px;
-  height: 100px;
-  margin-right: 100px;
-}
-
 /* Source: https://tableless.com.br/colocar-rodape-fixo-no-bottom/ */
-footer {
+.footer {
   background-color: darkslategrey;
   color: white;
   margin-top: 1rem;
-  bottom: 0;
-  width: 100%;
   text-align: center;
 }
 
@@ -97,12 +91,6 @@ footer {
   width: 48%;
 }
 
-/* #evaluation {
-  width: 675px;
-  margin: 30px;
-  display: flex;
-  justify-content: space-between;
-} */
 
 /* Source: */
 
@@ -112,17 +100,6 @@ footer {
   height: 90px;
   width: 675px;
 }
-
-#coments {
-  display: flex;
-  flex-direction: column;
-}
-
-#agree {
-  width: 675px;
-  margin: 20px;
-}
-
 #login {
   margin: 5px;
 }
